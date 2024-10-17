@@ -41,7 +41,7 @@ Perform to be defined install steps
 
 ### Commit Message Format
 We follow the **Conventional Commits** standard:
-<type>(<scope>): <short description>
+`<type>(<scope>): <short description>`
 - **Type** can be one of: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`.
 - **Scope** is optional, representing the affected part of the codebase (e.g., `auth`, `api`).
 - Example: `feat(auth): add user login`
