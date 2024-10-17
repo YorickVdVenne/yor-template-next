@@ -30,6 +30,24 @@ Add protection rules for the main branch:
 ## Local install
 Perform to be defined install steps
 
+## Git Workflow Conventions
+
+### Branch Naming
+- `feature/*`: For new features.
+- `bugfix/*`: For bug fixes.
+- `hotfix/*`: For urgent fixes.
+- `chore/*`: For minor changes like refactoring and updating dependencies.
+- `docs/*`: For documentation updates.
+
+### Commit Message Format
+We follow the **Conventional Commits** standard:
+<type>(<scope>): <short description>
+- **Type** can be one of: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`.
+- **Scope** is optional, representing the affected part of the codebase (e.g., `auth`, `api`).
+- Example: `feat(auth): add user login`
+
+Commit messages and branch names are checked before pushing changes.
+
 ## License
 This template is available for personal and educational use only. Commercial use is prohibited without
 explicit permission. Please contact me at yorick.vd.venne@hotmail.nl for inquiries regarding commercial use.
