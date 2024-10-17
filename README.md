@@ -27,8 +27,34 @@ Add protection rules for the main branch:
 2. Enable "Require approvals": 1.
 3. Force the above rules for everyone including administrators. Or if you are solo on the project excluding administrators.
 
-## Local install
-Perform to be defined install steps
+## Local installation
+
+### Prerequisites
+- Node.js v18 or later
+- npm or yarn
+
+### Setup
+1. Install dependencies for both backend and frontend:
+`cd backend`
+`npm install`
+`cd ../frontend`
+`npm install`
+
+2. Start the development servers:
+Backend
+`cd backend`
+`npm run develop`
+Visit http://localhost:1337 for the Strapi admin panel.
+
+Frontend
+`cd ../frontend`
+`npm run dev`
+Visit http://localhost:3000 for the Next.js frontend.
+
+For more in depth instruction for local installation checkout the README of the designated directories
+
+### Environent Variables
+Copy the .env.example files in both backend and frontend directories to .env and fill in any necessary environment variables.
 
 ## Git Workflow Conventions
 
