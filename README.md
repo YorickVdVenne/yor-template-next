@@ -1,5 +1,5 @@
-# yor-template-next
-A GitHub template containing the basic setup for new projects (Strapi &amp; Next.js)
+# Yor Template Next
+Yor Template Next is a modern techstack starting template to kickstart yor next project (see what I did there 😉). It uses Strapi as headless CMS and Next.js to build an awesome frontend.
 
 ## License
 This template is available for personal and educational use only. Commercial use is prohibited without
