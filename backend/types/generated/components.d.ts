@@ -61,6 +61,49 @@ export interface PageBlocksAccordionBlock extends Struct.ComponentSchema {
   };
 }
 
+export interface OrganismsNavigation extends Struct.ComponentSchema {
+  collectionName: 'components_organisms_navigations';
+  info: {
+    displayName: 'Navigation';
+  };
+  attributes: {
+    Links: Schema.Attribute.Component<'atoms.button', true>;
+  };
+}
+
+export interface OrganismsHero extends Struct.ComponentSchema {
+  collectionName: 'components_organisms_heroes';
+  info: {
+    displayName: 'Hero';
+  };
+  attributes: {
+    Title: Schema.Attribute.String;
+    Subtitle: Schema.Attribute.String;
+    BackgroundImage: Schema.Attribute.Component<'atoms.image', false>;
+    CTA: Schema.Attribute.Component<'molecules.cta', false>;
+  };
+}
+
+export interface OrganismsFooter extends Struct.ComponentSchema {
+  collectionName: 'components_organisms_footers';
+  info: {
+    displayName: 'Footer';
+  };
+  attributes: {
+    Socials: Schema.Attribute.Component<'atoms.button', true>;
+  };
+}
+
+export interface OrganismsAccordion extends Struct.ComponentSchema {
+  collectionName: 'components_organisms_accordions';
+  info: {
+    displayName: 'Accordion';
+  };
+  attributes: {
+    Items: Schema.Attribute.Component<'molecules.accordion-item', true>;
+  };
+}
+
 export interface MoleculesFormInput extends Struct.ComponentSchema {
   collectionName: 'components_molecules_form_inputs';
   info: {
@@ -109,49 +152,6 @@ export interface MoleculesAccordionItem extends Struct.ComponentSchema {
   };
 }
 
-export interface OrganismsNavigation extends Struct.ComponentSchema {
-  collectionName: 'components_organisms_navigations';
-  info: {
-    displayName: 'Navigation';
-  };
-  attributes: {
-    Links: Schema.Attribute.Component<'atoms.button', true>;
-  };
-}
-
-export interface OrganismsHero extends Struct.ComponentSchema {
-  collectionName: 'components_organisms_heroes';
-  info: {
-    displayName: 'Hero';
-  };
-  attributes: {
-    Title: Schema.Attribute.String;
-    Subtitle: Schema.Attribute.String;
-    BackgroundImage: Schema.Attribute.Component<'atoms.image', false>;
-    CTA: Schema.Attribute.Component<'molecules.cta', false>;
-  };
-}
-
-export interface OrganismsFooter extends Struct.ComponentSchema {
-  collectionName: 'components_organisms_footers';
-  info: {
-    displayName: 'Footer';
-  };
-  attributes: {
-    Socials: Schema.Attribute.Component<'atoms.button', true>;
-  };
-}
-
-export interface OrganismsAccordion extends Struct.ComponentSchema {
-  collectionName: 'components_organisms_accordions';
-  info: {
-    displayName: 'Accordion';
-  };
-  attributes: {
-    Items: Schema.Attribute.Component<'molecules.accordion-item', true>;
-  };
-}
-
 export interface AtomsImage extends Struct.ComponentSchema {
   collectionName: 'components_atoms_images';
   info: {
@@ -197,14 +197,14 @@ declare module '@strapi/strapi' {
       'page-blocks.form-block': PageBlocksFormBlock;
       'page-blocks.carousel-block': PageBlocksCarouselBlock;
       'page-blocks.accordion-block': PageBlocksAccordionBlock;
-      'molecules.form-input': MoleculesFormInput;
-      'molecules.cta': MoleculesCta;
-      'molecules.card': MoleculesCard;
-      'molecules.accordion-item': MoleculesAccordionItem;
       'organisms.navigation': OrganismsNavigation;
       'organisms.hero': OrganismsHero;
       'organisms.footer': OrganismsFooter;
       'organisms.accordion': OrganismsAccordion;
+      'molecules.form-input': MoleculesFormInput;
+      'molecules.cta': MoleculesCta;
+      'molecules.card': MoleculesCard;
+      'molecules.accordion-item': MoleculesAccordionItem;
       'atoms.image': AtomsImage;
       'atoms.icon': AtomsIcon;
       'atoms.button': AtomsButton;
