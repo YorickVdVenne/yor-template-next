@@ -19,10 +19,7 @@
     },
     "ImageAllign": {
       "type": "enumeration",
-      "enum": [
-        "left",
-        "right"
-      ]
+      "enum": ["left", "right"]
     }
   }
 }

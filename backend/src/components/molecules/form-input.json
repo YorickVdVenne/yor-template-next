@@ -10,11 +10,7 @@
     },
     "Type": {
       "type": "enumeration",
-      "enum": [
-        "text",
-        "email",
-        "password"
-      ]
+      "enum": ["text", "email", "password"]
     },
     "Placeholder": {
       "type": "string"
