@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_molecules_ctas",
+  "info": {
+    "displayName": "CTA"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "text"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button"
+    },
+    "Image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.image"
+    }
+  }
+}

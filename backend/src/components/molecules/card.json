@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_molecules_cards",
+  "info": {
+    "displayName": "Card"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.image"
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button"
+    }
+  }
+}
