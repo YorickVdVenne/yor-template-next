@@ -1,0 +1,21 @@
+:root {
+  --color-primary: #1d4ed8; /* Blue */
+  --color-secondary: #9333ea; /* Purple */
+  --color-accent: #f59e0b; /* Yellow */
+  --color-background: #ffffff; /* White */
+  --color-surface: #f3f4f6; /* Light Gray */
+  --color-text: #111827; /* Dark Gray */
+  --color-muted: #6b7280; /* Muted Text */
+  --color-error: #dc2626; /* Red */
+  --color-success: #16a34a; /* Green */
+}
+
+/* Dark mode colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #1f2937; /* Dark background */
+    --color-surface: #374151; /* Dark surface */
+    --color-text: #e5e7eb; /* Light text */
+    --color-muted: #9ca3af; /* Muted text */
+  }
+}
