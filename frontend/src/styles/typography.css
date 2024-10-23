@@ -1,0 +1,83 @@
+/* Base styles for the body */
+body {
+  font-family: var(--font-roboto);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-neutral);
+}
+
+/* Headings */
+h1 {
+  font-family: var(--font-roboto);
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: var(--font-roboto);
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h3 {
+  font-family: var(--font-roboto);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+h4 {
+  font-family: var(--font-roboto);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+h5 {
+  font-family: var(--font-roboto);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+h6 {
+  font-family: var(--font-roboto);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Code styles */
+code,
+pre {
+  font-family: var(--font-roboto-mono);
+  background-color: var(--color-light-gray);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* Paragraphs */
+p {
+  margin: 0 0 1rem;
+}
+
+/* Lists */
+ul,
+ol {
+  margin: 0 0 1rem;
+  padding-left: 1.5rem;
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
