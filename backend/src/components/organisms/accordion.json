@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_organisms_accordions",
+  "info": {
+    "displayName": "Accordion"
+  },
+  "options": {},
+  "attributes": {
+    "Items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "molecules.accordion-item"
+    }
+  }
+}

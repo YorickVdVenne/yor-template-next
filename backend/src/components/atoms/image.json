@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_atoms_images",
+  "info": {
+    "displayName": "Image",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "src": {
+      "allowedTypes": ["images", "files", "videos", "audios"],
+      "type": "media",
+      "multiple": false
+    },
+    "altText": {
+      "type": "string"
+    }
+  }
+}

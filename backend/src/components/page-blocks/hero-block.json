@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_page_blocks_hero_blocks",
+  "info": {
+    "displayName": "Hero Block",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "Hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "organisms.hero"
+    }
+  }
+}
