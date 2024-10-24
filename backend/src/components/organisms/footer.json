@@ -1,11 +1,12 @@
 {
   "collectionName": "components_organisms_footers",
   "info": {
-    "displayName": "Footer"
+    "displayName": "Footer",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Socials": {
+    "socials": {
       "type": "component",
       "repeatable": true,
       "component": "atoms.button"

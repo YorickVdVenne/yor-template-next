@@ -2,11 +2,12 @@
   "collectionName": "components_page_blocks_hero_blocks",
   "info": {
     "displayName": "Hero Block",
-    "icon": "chartBubble"
+    "icon": "chartBubble",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Hero": {
+    "hero": {
       "type": "component",
       "repeatable": false,
       "component": "organisms.hero"

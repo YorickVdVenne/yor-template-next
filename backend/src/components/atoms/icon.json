@@ -2,17 +2,18 @@
   "collectionName": "components_atoms_icons",
   "info": {
     "displayName": "Icon",
-    "icon": "alien"
+    "icon": "alien",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string"
     },
-    "Size": {
+    "size": {
       "type": "integer"
     },
-    "Color": {
+    "color": {
       "type": "string"
     }
   }

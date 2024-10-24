@@ -1,11 +1,12 @@
 {
   "collectionName": "components_organisms_navigations",
   "info": {
-    "displayName": "Navigation"
+    "displayName": "Navigation",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Links": {
+    "links": {
       "type": "component",
       "repeatable": true,
       "component": "atoms.button"
