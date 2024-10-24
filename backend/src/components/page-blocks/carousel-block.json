@@ -2,16 +2,17 @@
   "collectionName": "components_page_blocks_carousel_blocks",
   "info": {
     "displayName": "Carousel Block",
-    "icon": "landscape"
+    "icon": "landscape",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Images": {
+    "images": {
       "type": "component",
       "repeatable": true,
       "component": "atoms.image"
     },
-    "Autoplay": {
+    "autoplay": {
       "type": "boolean"
     }
   }

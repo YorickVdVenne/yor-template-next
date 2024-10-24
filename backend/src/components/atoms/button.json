@@ -1,17 +1,18 @@
 {
   "collectionName": "components_atoms_buttons",
   "info": {
-    "displayName": "Button"
+    "displayName": "Button",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Label": {
+    "label": {
       "type": "string"
     },
-    "URL": {
+    "url": {
       "type": "string"
     },
-    "Variant": {
+    "variant": {
       "type": "enumeration",
       "enum": ["primary", "secondary"]
     }

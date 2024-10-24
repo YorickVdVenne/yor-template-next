@@ -5,12 +5,13 @@ export interface PageBlocksImageAndTextBlock extends Struct.ComponentSchema {
   info: {
     displayName: 'Image & Text Block';
     icon: 'server';
+    description: '';
   };
   attributes: {
-    Title: Schema.Attribute.String;
-    Text: Schema.Attribute.RichText;
-    Image: Schema.Attribute.Component<'atoms.image', false>;
-    ImageAllign: Schema.Attribute.Enumeration<['left', 'right']>;
+    title: Schema.Attribute.String;
+    text: Schema.Attribute.RichText;
+    image: Schema.Attribute.Component<'atoms.image', false>;
+    imageAllign: Schema.Attribute.Enumeration<['left', 'right']>;
   };
 }
 
@@ -19,9 +20,10 @@ export interface PageBlocksHeroBlock extends Struct.ComponentSchema {
   info: {
     displayName: 'Hero Block';
     icon: 'chartBubble';
+    description: '';
   };
   attributes: {
-    Hero: Schema.Attribute.Component<'organisms.hero', false>;
+    hero: Schema.Attribute.Component<'organisms.hero', false>;
   };
 }
 
@@ -30,10 +32,11 @@ export interface PageBlocksFormBlock extends Struct.ComponentSchema {
   info: {
     displayName: 'Form Block';
     icon: 'archive';
+    description: '';
   };
   attributes: {
-    FormInputs: Schema.Attribute.Component<'molecules.form-input', true>;
-    SubmitButton: Schema.Attribute.Component<'atoms.button', false>;
+    formInputs: Schema.Attribute.Component<'molecules.form-input', true>;
+    submitButton: Schema.Attribute.Component<'atoms.button', false>;
   };
 }
 
@@ -42,10 +45,11 @@ export interface PageBlocksCarouselBlock extends Struct.ComponentSchema {
   info: {
     displayName: 'Carousel Block';
     icon: 'landscape';
+    description: '';
   };
   attributes: {
-    Images: Schema.Attribute.Component<'atoms.image', true>;
-    Autoplay: Schema.Attribute.Boolean;
+    images: Schema.Attribute.Component<'atoms.image', true>;
+    autoplay: Schema.Attribute.Boolean;
   };
 }
 
@@ -54,10 +58,11 @@ export interface PageBlocksAccordionBlock extends Struct.ComponentSchema {
   info: {
     displayName: 'Accordion Block';
     icon: 'server';
+    description: '';
   };
   attributes: {
-    Title: Schema.Attribute.String;
-    Accordion: Schema.Attribute.Component<'organisms.accordion', false>;
+    title: Schema.Attribute.String;
+    accordion: Schema.Attribute.Component<'organisms.accordion', false>;
   };
 }
 
@@ -65,9 +70,10 @@ export interface OrganismsNavigation extends Struct.ComponentSchema {
   collectionName: 'components_organisms_navigations';
   info: {
     displayName: 'Navigation';
+    description: '';
   };
   attributes: {
-    Links: Schema.Attribute.Component<'atoms.button', true>;
+    links: Schema.Attribute.Component<'atoms.button', true>;
   };
 }
 
@@ -75,12 +81,13 @@ export interface OrganismsHero extends Struct.ComponentSchema {
   collectionName: 'components_organisms_heroes';
   info: {
     displayName: 'Hero';
+    description: '';
   };
   attributes: {
-    Title: Schema.Attribute.String;
-    Subtitle: Schema.Attribute.String;
-    BackgroundImage: Schema.Attribute.Component<'atoms.image', false>;
-    CTA: Schema.Attribute.Component<'molecules.cta', false>;
+    title: Schema.Attribute.String;
+    subtitle: Schema.Attribute.String;
+    backgroundImage: Schema.Attribute.Component<'atoms.image', false>;
+    cta: Schema.Attribute.Component<'molecules.cta', false>;
   };
 }
 
@@ -88,9 +95,10 @@ export interface OrganismsFooter extends Struct.ComponentSchema {
   collectionName: 'components_organisms_footers';
   info: {
     displayName: 'Footer';
+    description: '';
   };
   attributes: {
-    Socials: Schema.Attribute.Component<'atoms.button', true>;
+    socials: Schema.Attribute.Component<'atoms.button', true>;
   };
 }
 
@@ -98,9 +106,10 @@ export interface OrganismsAccordion extends Struct.ComponentSchema {
   collectionName: 'components_organisms_accordions';
   info: {
     displayName: 'Accordion';
+    description: '';
   };
   attributes: {
-    Items: Schema.Attribute.Component<'molecules.accordion-item', true>;
+    items: Schema.Attribute.Component<'molecules.accordion-item', true>;
   };
 }
 
@@ -108,11 +117,12 @@ export interface MoleculesFormInput extends Struct.ComponentSchema {
   collectionName: 'components_molecules_form_inputs';
   info: {
     displayName: 'Form Input';
+    description: '';
   };
   attributes: {
-    Label: Schema.Attribute.String;
-    Type: Schema.Attribute.Enumeration<['text', 'email', 'password']>;
-    Placeholder: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<['text', 'email', 'password']>;
+    placeholder: Schema.Attribute.String;
   };
 }
 
@@ -120,11 +130,12 @@ export interface MoleculesCta extends Struct.ComponentSchema {
   collectionName: 'components_molecules_ctas';
   info: {
     displayName: 'CTA';
+    description: '';
   };
   attributes: {
-    Text: Schema.Attribute.Text;
-    Button: Schema.Attribute.Component<'atoms.button', false>;
-    Image: Schema.Attribute.Component<'atoms.image', false>;
+    text: Schema.Attribute.Text;
+    button: Schema.Attribute.Component<'atoms.button', false>;
+    image: Schema.Attribute.Component<'atoms.image', false>;
   };
 }
 
@@ -132,12 +143,13 @@ export interface MoleculesCard extends Struct.ComponentSchema {
   collectionName: 'components_molecules_cards';
   info: {
     displayName: 'Card';
+    description: '';
   };
   attributes: {
-    Title: Schema.Attribute.String;
-    Description: Schema.Attribute.Text;
-    Image: Schema.Attribute.Component<'atoms.image', false>;
-    Link: Schema.Attribute.Component<'atoms.button', false>;
+    title: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Component<'atoms.image', false>;
+    link: Schema.Attribute.Component<'atoms.button', false>;
   };
 }
 
@@ -145,10 +157,11 @@ export interface MoleculesAccordionItem extends Struct.ComponentSchema {
   collectionName: 'components_molecules_accordion_items';
   info: {
     displayName: 'Accordion Item';
+    description: '';
   };
   attributes: {
-    Title: Schema.Attribute.String;
-    Content: Schema.Attribute.RichText;
+    title: Schema.Attribute.String;
+    content: Schema.Attribute.RichText;
   };
 }
 
@@ -169,11 +182,12 @@ export interface AtomsIcon extends Struct.ComponentSchema {
   info: {
     displayName: 'Icon';
     icon: 'alien';
+    description: '';
   };
   attributes: {
-    Name: Schema.Attribute.String;
-    Size: Schema.Attribute.Integer;
-    Color: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+    size: Schema.Attribute.Integer;
+    color: Schema.Attribute.String;
   };
 }
 
@@ -181,11 +195,12 @@ export interface AtomsButton extends Struct.ComponentSchema {
   collectionName: 'components_atoms_buttons';
   info: {
     displayName: 'Button';
+    description: '';
   };
   attributes: {
-    Label: Schema.Attribute.String;
-    URL: Schema.Attribute.String;
-    Variant: Schema.Attribute.Enumeration<['primary', 'secondary']>;
+    label: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+    variant: Schema.Attribute.Enumeration<['primary', 'secondary']>;
   };
 }
 

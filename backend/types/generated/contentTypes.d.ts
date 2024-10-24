@@ -1,18 +1,28 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
-export interface ApiPagePage extends Struct.SingleTypeSchema {
+export interface ApiPagePage extends Struct.CollectionTypeSchema {
   collectionName: 'pages';
   info: {
     singularName: 'page';
     pluralName: 'pages';
-    displayName: 'Page';
+    displayName: 'Pages';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Title: Schema.Attribute.String;
-    ContentBlocks: Schema.Attribute.DynamicZone<[]>;
+    title: Schema.Attribute.String;
+    slug: Schema.Attribute.String & Schema.Attribute.Unique;
+    pageBlocks: Schema.Attribute.DynamicZone<
+      [
+        'page-blocks.image-and-text-block',
+        'page-blocks.hero-block',
+        'page-blocks.form-block',
+        'page-blocks.carousel-block',
+        'page-blocks.accordion-block'
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

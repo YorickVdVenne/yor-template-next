@@ -2,16 +2,17 @@
   "collectionName": "components_page_blocks_form_blocks",
   "info": {
     "displayName": "Form Block",
-    "icon": "archive"
+    "icon": "archive",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "FormInputs": {
+    "formInputs": {
       "type": "component",
       "repeatable": true,
       "component": "molecules.form-input"
     },
-    "SubmitButton": {
+    "submitButton": {
       "type": "component",
       "repeatable": false,
       "component": "atoms.button"

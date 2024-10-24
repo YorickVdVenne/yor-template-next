@@ -1,18 +1,19 @@
 {
   "collectionName": "components_molecules_form_inputs",
   "info": {
-    "displayName": "Form Input"
+    "displayName": "Form Input",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Label": {
+    "label": {
       "type": "string"
     },
-    "Type": {
+    "type": {
       "type": "enumeration",
       "enum": ["text", "email", "password"]
     },
-    "Placeholder": {
+    "placeholder": {
       "type": "string"
     }
   }

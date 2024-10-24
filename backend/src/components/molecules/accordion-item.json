@@ -1,14 +1,15 @@
 {
   "collectionName": "components_molecules_accordion_items",
   "info": {
-    "displayName": "Accordion Item"
+    "displayName": "Accordion Item",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Content": {
+    "content": {
       "type": "richtext"
     }
   }
