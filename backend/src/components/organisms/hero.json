@@ -1,22 +1,23 @@
 {
   "collectionName": "components_organisms_heroes",
   "info": {
-    "displayName": "Hero"
+    "displayName": "Hero",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Subtitle": {
+    "subtitle": {
       "type": "string"
     },
-    "BackgroundImage": {
+    "backgroundImage": {
       "type": "component",
       "repeatable": false,
       "component": "atoms.image"
     },
-    "CTA": {
+    "cta": {
       "type": "component",
       "repeatable": false,
       "component": "molecules.cta"
