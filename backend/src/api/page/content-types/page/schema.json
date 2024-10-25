@@ -1,22 +1,33 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "pages",
   "info": {
     "singularName": "page",
     "pluralName": "pages",
-    "displayName": "Page"
+    "displayName": "Pages",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "ContentBlocks": {
+    "slug": {
+      "type": "string",
+      "unique": true
+    },
+    "pageBlocks": {
       "type": "dynamiczone",
-      "components": []
+      "components": [
+        "page-blocks.image-and-text-block",
+        "page-blocks.hero-block",
+        "page-blocks.form-block",
+        "page-blocks.carousel-block",
+        "page-blocks.accordion-block"
+      ]
     }
   }
 }

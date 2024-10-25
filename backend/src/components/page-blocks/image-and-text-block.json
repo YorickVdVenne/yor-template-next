@@ -2,22 +2,23 @@
   "collectionName": "components_page_blocks_image_and_text_blocks",
   "info": {
     "displayName": "Image & Text Block",
-    "icon": "server"
+    "icon": "server",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Text": {
+    "text": {
       "type": "richtext"
     },
-    "Image": {
+    "image": {
       "type": "component",
       "repeatable": false,
       "component": "atoms.image"
     },
-    "ImageAllign": {
+    "imageAllign": {
       "type": "enumeration",
       "enum": ["left", "right"]
     }
