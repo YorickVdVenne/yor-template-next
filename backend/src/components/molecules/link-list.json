@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_molecules_link_lists",
+  "info": {
+    "displayName": "LinkList",
+    "icon": "manyWays"
+  },
+  "options": {},
+  "attributes": {
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "required": true,
+      "component": "atoms.link"
+    }
+  }
+}

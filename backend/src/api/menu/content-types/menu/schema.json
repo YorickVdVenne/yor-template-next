@@ -1,14 +1,14 @@
 {
   "kind": "collectionType",
-  "collectionName": "pages",
+  "collectionName": "menus",
   "info": {
-    "singularName": "page",
-    "pluralName": "pages",
-    "displayName": "Page",
+    "singularName": "menu",
+    "pluralName": "menus",
+    "displayName": "Menu",
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {
     "i18n": {
@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "path": {
+    "name": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -25,25 +25,16 @@
       "type": "string",
       "required": true
     },
-    "title": {
+    "linkList": {
+      "type": "component",
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
-      "required": true
-    },
-    "components": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "dynamiczone",
-      "components": [
-        "blocks.hero"
-      ]
+      "required": true,
+      "component": "molecules.link-list"
     }
   }
 }
