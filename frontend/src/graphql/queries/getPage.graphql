@@ -1,0 +1,21 @@
+query getPage(
+  $locale: I18NLocaleCode!
+  $offset: Int
+  $limit: Int
+  $filters: PageFiltersInput
+) {
+  pages(
+    filters: $filters
+    pagination: { start: $offset, limit: $limit }
+    locale: $locale
+  ) {
+    title
+    publishedAt
+    path
+    components {
+      ... on ComponentBlocksHero {
+        ...HeroBlock
+      }
+    }
+  }
+}

@@ -12,11 +12,6 @@
     "description": {
       "type": "text"
     },
-    "image": {
-      "type": "component",
-      "repeatable": false,
-      "component": "atoms.image"
-    },
     "link": {
       "type": "component",
       "repeatable": false,

@@ -1,71 +1,5 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
-export interface PageBlocksImageAndTextBlock extends Struct.ComponentSchema {
-  collectionName: 'components_page_blocks_image_and_text_blocks';
-  info: {
-    displayName: 'Image & Text Block';
-    icon: 'server';
-    description: '';
-  };
-  attributes: {
-    title: Schema.Attribute.String;
-    text: Schema.Attribute.RichText;
-    image: Schema.Attribute.Component<'atoms.image', false>;
-    imageAllign: Schema.Attribute.Enumeration<['left', 'right']>;
-  };
-}
-
-export interface PageBlocksHeroBlock extends Struct.ComponentSchema {
-  collectionName: 'components_page_blocks_hero_blocks';
-  info: {
-    displayName: 'Hero Block';
-    icon: 'chartBubble';
-    description: '';
-  };
-  attributes: {
-    hero: Schema.Attribute.Component<'organisms.hero', false>;
-  };
-}
-
-export interface PageBlocksFormBlock extends Struct.ComponentSchema {
-  collectionName: 'components_page_blocks_form_blocks';
-  info: {
-    displayName: 'Form Block';
-    icon: 'archive';
-    description: '';
-  };
-  attributes: {
-    formInputs: Schema.Attribute.Component<'molecules.form-input', true>;
-    submitButton: Schema.Attribute.Component<'atoms.button', false>;
-  };
-}
-
-export interface PageBlocksCarouselBlock extends Struct.ComponentSchema {
-  collectionName: 'components_page_blocks_carousel_blocks';
-  info: {
-    displayName: 'Carousel Block';
-    icon: 'landscape';
-    description: '';
-  };
-  attributes: {
-    images: Schema.Attribute.Component<'atoms.image', true>;
-    autoplay: Schema.Attribute.Boolean;
-  };
-}
-
-export interface PageBlocksAccordionBlock extends Struct.ComponentSchema {
-  collectionName: 'components_page_blocks_accordion_blocks';
-  info: {
-    displayName: 'Accordion Block';
-    icon: 'server';
-    description: '';
-  };
-  attributes: {
-    title: Schema.Attribute.String;
-    accordion: Schema.Attribute.Component<'organisms.accordion', false>;
-  };
-}
-
 export interface OrganismsNavigation extends Struct.ComponentSchema {
   collectionName: 'components_organisms_navigations';
   info: {
@@ -74,20 +8,6 @@ export interface OrganismsNavigation extends Struct.ComponentSchema {
   };
   attributes: {
     links: Schema.Attribute.Component<'atoms.button', true>;
-  };
-}
-
-export interface OrganismsHero extends Struct.ComponentSchema {
-  collectionName: 'components_organisms_heroes';
-  info: {
-    displayName: 'Hero';
-    description: '';
-  };
-  attributes: {
-    title: Schema.Attribute.String;
-    subtitle: Schema.Attribute.String;
-    backgroundImage: Schema.Attribute.Component<'atoms.image', false>;
-    cta: Schema.Attribute.Component<'molecules.cta', false>;
   };
 }
 
@@ -102,40 +22,15 @@ export interface OrganismsFooter extends Struct.ComponentSchema {
   };
 }
 
-export interface OrganismsAccordion extends Struct.ComponentSchema {
-  collectionName: 'components_organisms_accordions';
+export interface MoleculesLinkList extends Struct.ComponentSchema {
+  collectionName: 'components_molecules_link_lists';
   info: {
-    displayName: 'Accordion';
-    description: '';
+    displayName: 'LinkList';
+    icon: 'manyWays';
   };
   attributes: {
-    items: Schema.Attribute.Component<'molecules.accordion-item', true>;
-  };
-}
-
-export interface MoleculesFormInput extends Struct.ComponentSchema {
-  collectionName: 'components_molecules_form_inputs';
-  info: {
-    displayName: 'Form Input';
-    description: '';
-  };
-  attributes: {
-    label: Schema.Attribute.String;
-    type: Schema.Attribute.Enumeration<['text', 'email', 'password']>;
-    placeholder: Schema.Attribute.String;
-  };
-}
-
-export interface MoleculesCta extends Struct.ComponentSchema {
-  collectionName: 'components_molecules_ctas';
-  info: {
-    displayName: 'CTA';
-    description: '';
-  };
-  attributes: {
-    text: Schema.Attribute.Text;
-    button: Schema.Attribute.Component<'atoms.button', false>;
-    image: Schema.Attribute.Component<'atoms.image', false>;
+    links: Schema.Attribute.Component<'atoms.link', true> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -148,46 +43,37 @@ export interface MoleculesCard extends Struct.ComponentSchema {
   attributes: {
     title: Schema.Attribute.String;
     description: Schema.Attribute.Text;
-    image: Schema.Attribute.Component<'atoms.image', false>;
     link: Schema.Attribute.Component<'atoms.button', false>;
   };
 }
 
-export interface MoleculesAccordionItem extends Struct.ComponentSchema {
-  collectionName: 'components_molecules_accordion_items';
+export interface BlocksHero extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_heroes';
   info: {
-    displayName: 'Accordion Item';
-    description: '';
+    displayName: 'Hero';
+    icon: 'chartBubble';
   };
   attributes: {
-    title: Schema.Attribute.String;
-    content: Schema.Attribute.RichText;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    subTitle: Schema.Attribute.String;
+    backgroundImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
   };
 }
 
-export interface AtomsImage extends Struct.ComponentSchema {
-  collectionName: 'components_atoms_images';
+export interface AtomsLink extends Struct.ComponentSchema {
+  collectionName: 'components_atoms_links';
   info: {
-    displayName: 'Image';
-    icon: 'picture';
+    displayName: 'Link';
+    icon: 'oneWay';
   };
   attributes: {
-    src: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    altText: Schema.Attribute.String;
-  };
-}
-
-export interface AtomsIcon extends Struct.ComponentSchema {
-  collectionName: 'components_atoms_icons';
-  info: {
-    displayName: 'Icon';
-    icon: 'alien';
-    description: '';
-  };
-  attributes: {
-    name: Schema.Attribute.String;
-    size: Schema.Attribute.Integer;
-    color: Schema.Attribute.String;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    target: Schema.Attribute.Enumeration<['_self', '_blank']>;
+    page: Schema.Attribute.Relation<'oneToOne', 'api::page.page'>;
+    description: Schema.Attribute.Text;
   };
 }
 
@@ -207,21 +93,12 @@ export interface AtomsButton extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'page-blocks.image-and-text-block': PageBlocksImageAndTextBlock;
-      'page-blocks.hero-block': PageBlocksHeroBlock;
-      'page-blocks.form-block': PageBlocksFormBlock;
-      'page-blocks.carousel-block': PageBlocksCarouselBlock;
-      'page-blocks.accordion-block': PageBlocksAccordionBlock;
       'organisms.navigation': OrganismsNavigation;
-      'organisms.hero': OrganismsHero;
       'organisms.footer': OrganismsFooter;
-      'organisms.accordion': OrganismsAccordion;
-      'molecules.form-input': MoleculesFormInput;
-      'molecules.cta': MoleculesCta;
+      'molecules.link-list': MoleculesLinkList;
       'molecules.card': MoleculesCard;
-      'molecules.accordion-item': MoleculesAccordionItem;
-      'atoms.image': AtomsImage;
-      'atoms.icon': AtomsIcon;
+      'blocks.hero': BlocksHero;
+      'atoms.link': AtomsLink;
       'atoms.button': AtomsButton;
     }
   }

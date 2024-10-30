@@ -1,0 +1,10 @@
+fragment HeroBlock on ComponentBlocksHero {
+  __typename
+  id
+  title
+  subTitle
+  backgroundImage {
+    alternativeText
+    url
+  }
+}

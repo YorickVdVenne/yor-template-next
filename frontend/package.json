@@ -7,15 +7,23 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "generate-types": "graphql-codegen --config codegen.js"
   },
   "dependencies": {
+    "@apollo/client": "^3.11.8",
+    "dotenv": "^16.4.5",
+    "graphql": "^16.9.0",
     "next": "14.2.15",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@graphql-codegen/cli": "^5.0.3",
+    "@graphql-codegen/typescript": "^4.1.0",
+    "@graphql-codegen/typescript-operations": "^4.3.0",
+    "@graphql-codegen/typescript-react-apollo": "^4.3.2",
+    "@types/node": "^20.17.1",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8.57.1",
