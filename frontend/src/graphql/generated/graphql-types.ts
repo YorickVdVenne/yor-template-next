@@ -1,35 +1,22 @@
 import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
-export type Exact<T extends { [key: string]: unknown }> = {
-  [K in keyof T]: T[K];
-};
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]?: Maybe<T[SubKey]>;
-};
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]: Maybe<T[SubKey]>;
-};
-export type MakeEmpty<
-  T extends { [key: string]: unknown },
-  K extends keyof T
-> = { [_ in K]?: never };
-export type Incremental<T> =
-  | T
-  | {
-      [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never;
-    };
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = { [_ in K]?: never };
+export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: { input: string; output: string };
-  String: { input: string; output: string };
-  Boolean: { input: boolean; output: boolean };
-  Int: { input: number; output: number };
-  Float: { input: number; output: number };
-  DateTime: { input: any; output: any };
-  I18NLocaleCode: { input: any; output: any };
-  JSON: { input: any; output: any };
-  PageComponentsDynamicZoneInput: { input: any; output: any };
+  ID: { input: string; output: string; }
+  String: { input: string; output: string; }
+  Boolean: { input: boolean; output: boolean; }
+  Int: { input: number; output: number; }
+  Float: { input: number; output: number; }
+  DateTime: { input: any; output: any; }
+  I18NLocaleCode: { input: any; output: any; }
+  JSON: { input: any; output: any; }
+  PageComponentsDynamicZoneInput: { input: any; output: any; }
 };
 
 export type BooleanFilterInput = {
@@ -126,6 +113,7 @@ export type ComponentMoleculesLinkList = {
   links: Array<Maybe<ComponentAtomsLink>>;
 };
 
+
 export type ComponentMoleculesLinkListLinksArgs = {
   filters?: InputMaybe<ComponentAtomsLinkFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
@@ -150,6 +138,7 @@ export type ComponentOrganismsFooter = {
   socials?: Maybe<Array<Maybe<ComponentAtomsButton>>>;
 };
 
+
 export type ComponentOrganismsFooterSocialsArgs = {
   filters?: InputMaybe<ComponentAtomsButtonFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
@@ -161,6 +150,7 @@ export type ComponentOrganismsNavigation = {
   id: Scalars['ID']['output'];
   links?: Maybe<Array<Maybe<ComponentAtomsButton>>>;
 };
+
 
 export type ComponentOrganismsNavigationLinksArgs = {
   filters?: InputMaybe<ComponentAtomsButtonFiltersInput>;
@@ -245,24 +235,7 @@ export type FloatFilterInput = {
   startsWith?: InputMaybe<Scalars['Float']['input']>;
 };
 
-export type GenericMorph =
-  | ComponentAtomsButton
-  | ComponentAtomsLink
-  | ComponentBlocksHero
-  | ComponentMoleculesCard
-  | ComponentMoleculesLinkList
-  | ComponentOrganismsFooter
-  | ComponentOrganismsNavigation
-  | Global
-  | I18NLocale
-  | Menu
-  | Page
-  | ReviewWorkflowsWorkflow
-  | ReviewWorkflowsWorkflowStage
-  | UploadFile
-  | UsersPermissionsPermission
-  | UsersPermissionsRole
-  | UsersPermissionsUser;
+export type GenericMorph = ComponentAtomsButton | ComponentAtomsLink | ComponentBlocksHero | ComponentMoleculesCard | ComponentMoleculesLinkList | ComponentOrganismsFooter | ComponentOrganismsNavigation | Global | I18NLocale | Menu | Page | ReviewWorkflowsWorkflow | ReviewWorkflowsWorkflowStage | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
 
 export type Global = {
   __typename?: 'Global';
@@ -397,11 +370,13 @@ export type Menu = {
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
+
 export type MenuLocalizationsArgs = {
   filters?: InputMaybe<MenuFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
+
 
 export type MenuLocalizations_ConnectionArgs = {
   filters?: InputMaybe<MenuFiltersInput>;
@@ -483,11 +458,13 @@ export type Mutation = {
   updateUsersPermissionsUser: UsersPermissionsUserEntityResponse;
 };
 
+
 export type MutationChangePasswordArgs = {
   currentPassword: Scalars['String']['input'];
   password: Scalars['String']['input'];
   passwordConfirmation: Scalars['String']['input'];
 };
+
 
 export type MutationCreateMenuArgs = {
   data: MenuInput;
@@ -495,75 +472,92 @@ export type MutationCreateMenuArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type MutationCreatePageArgs = {
   data: PageInput;
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type MutationCreateReviewWorkflowsWorkflowArgs = {
   data: ReviewWorkflowsWorkflowInput;
   status?: InputMaybe<PublicationStatus>;
 };
+
 
 export type MutationCreateReviewWorkflowsWorkflowStageArgs = {
   data: ReviewWorkflowsWorkflowStageInput;
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type MutationCreateUsersPermissionsRoleArgs = {
   data: UsersPermissionsRoleInput;
 };
 
+
 export type MutationCreateUsersPermissionsUserArgs = {
   data: UsersPermissionsUserInput;
 };
+
 
 export type MutationDeleteMenuArgs = {
   documentId: Scalars['ID']['input'];
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
 };
 
+
 export type MutationDeletePageArgs = {
   documentId: Scalars['ID']['input'];
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
 };
 
+
 export type MutationDeleteReviewWorkflowsWorkflowArgs = {
   documentId: Scalars['ID']['input'];
 };
+
 
 export type MutationDeleteReviewWorkflowsWorkflowStageArgs = {
   documentId: Scalars['ID']['input'];
 };
 
+
 export type MutationDeleteUploadFileArgs = {
   id: Scalars['ID']['input'];
 };
+
 
 export type MutationDeleteUsersPermissionsRoleArgs = {
   id: Scalars['ID']['input'];
 };
 
+
 export type MutationDeleteUsersPermissionsUserArgs = {
   id: Scalars['ID']['input'];
 };
+
 
 export type MutationEmailConfirmationArgs = {
   confirmation: Scalars['String']['input'];
 };
 
+
 export type MutationForgotPasswordArgs = {
   email: Scalars['String']['input'];
 };
+
 
 export type MutationLoginArgs = {
   input: UsersPermissionsLoginInput;
 };
 
+
 export type MutationRegisterArgs = {
   input: UsersPermissionsRegisterInput;
 };
+
 
 export type MutationResetPasswordArgs = {
   code: Scalars['String']['input'];
@@ -571,10 +565,12 @@ export type MutationResetPasswordArgs = {
   passwordConfirmation: Scalars['String']['input'];
 };
 
+
 export type MutationUpdateGlobalArgs = {
   data: GlobalInput;
   status?: InputMaybe<PublicationStatus>;
 };
+
 
 export type MutationUpdateMenuArgs = {
   data: MenuInput;
@@ -583,6 +579,7 @@ export type MutationUpdateMenuArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type MutationUpdatePageArgs = {
   data: PageInput;
   documentId: Scalars['ID']['input'];
@@ -590,11 +587,13 @@ export type MutationUpdatePageArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type MutationUpdateReviewWorkflowsWorkflowArgs = {
   data: ReviewWorkflowsWorkflowInput;
   documentId: Scalars['ID']['input'];
   status?: InputMaybe<PublicationStatus>;
 };
+
 
 export type MutationUpdateReviewWorkflowsWorkflowStageArgs = {
   data: ReviewWorkflowsWorkflowStageInput;
@@ -602,15 +601,18 @@ export type MutationUpdateReviewWorkflowsWorkflowStageArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type MutationUpdateUploadFileArgs = {
   id: Scalars['ID']['input'];
   info?: InputMaybe<FileInfoInput>;
 };
 
+
 export type MutationUpdateUsersPermissionsRoleArgs = {
   data: UsersPermissionsRoleInput;
   id: Scalars['ID']['input'];
 };
+
 
 export type MutationUpdateUsersPermissionsUserArgs = {
   data: UsersPermissionsUserInput;
@@ -631,11 +633,13 @@ export type Page = {
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
+
 export type PageLocalizationsArgs = {
   filters?: InputMaybe<PageFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
+
 
 export type PageLocalizations_ConnectionArgs = {
   filters?: InputMaybe<PageFiltersInput>;
@@ -666,9 +670,7 @@ export type PageFiltersInput = {
 };
 
 export type PageInput = {
-  components?: InputMaybe<
-    Array<Scalars['PageComponentsDynamicZoneInput']['input']>
-  >;
+  components?: InputMaybe<Array<Scalars['PageComponentsDynamicZoneInput']['input']>>;
   path?: InputMaybe<Scalars['String']['input']>;
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
@@ -729,14 +731,17 @@ export type Query = {
   usersPermissionsUsers_connection?: Maybe<UsersPermissionsUserEntityResponseCollection>;
 };
 
+
 export type QueryGlobalArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
+
 
 export type QueryI18NLocaleArgs = {
   documentId: Scalars['ID']['input'];
   status?: InputMaybe<PublicationStatus>;
 };
+
 
 export type QueryI18NLocalesArgs = {
   filters?: InputMaybe<I18NLocaleFiltersInput>;
@@ -745,6 +750,7 @@ export type QueryI18NLocalesArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type QueryI18NLocales_ConnectionArgs = {
   filters?: InputMaybe<I18NLocaleFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
@@ -752,11 +758,13 @@ export type QueryI18NLocales_ConnectionArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type QueryMenuArgs = {
   documentId: Scalars['ID']['input'];
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
   status?: InputMaybe<PublicationStatus>;
 };
+
 
 export type QueryMenusArgs = {
   filters?: InputMaybe<MenuFiltersInput>;
@@ -766,6 +774,7 @@ export type QueryMenusArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type QueryMenus_ConnectionArgs = {
   filters?: InputMaybe<MenuFiltersInput>;
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
@@ -774,11 +783,13 @@ export type QueryMenus_ConnectionArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type QueryPageArgs = {
   documentId: Scalars['ID']['input'];
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
   status?: InputMaybe<PublicationStatus>;
 };
+
 
 export type QueryPagesArgs = {
   filters?: InputMaybe<PageFiltersInput>;
@@ -788,6 +799,7 @@ export type QueryPagesArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type QueryPages_ConnectionArgs = {
   filters?: InputMaybe<PageFiltersInput>;
   locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
@@ -796,15 +808,18 @@ export type QueryPages_ConnectionArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type QueryReviewWorkflowsWorkflowArgs = {
   documentId: Scalars['ID']['input'];
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type QueryReviewWorkflowsWorkflowStageArgs = {
   documentId: Scalars['ID']['input'];
   status?: InputMaybe<PublicationStatus>;
 };
+
 
 export type QueryReviewWorkflowsWorkflowStagesArgs = {
   filters?: InputMaybe<ReviewWorkflowsWorkflowStageFiltersInput>;
@@ -813,12 +828,14 @@ export type QueryReviewWorkflowsWorkflowStagesArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type QueryReviewWorkflowsWorkflowStages_ConnectionArgs = {
   filters?: InputMaybe<ReviewWorkflowsWorkflowStageFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
+
 
 export type QueryReviewWorkflowsWorkflowsArgs = {
   filters?: InputMaybe<ReviewWorkflowsWorkflowFiltersInput>;
@@ -827,6 +844,7 @@ export type QueryReviewWorkflowsWorkflowsArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type QueryReviewWorkflowsWorkflows_ConnectionArgs = {
   filters?: InputMaybe<ReviewWorkflowsWorkflowFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
@@ -834,10 +852,12 @@ export type QueryReviewWorkflowsWorkflows_ConnectionArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type QueryUploadFileArgs = {
   documentId: Scalars['ID']['input'];
   status?: InputMaybe<PublicationStatus>;
 };
+
 
 export type QueryUploadFilesArgs = {
   filters?: InputMaybe<UploadFileFiltersInput>;
@@ -846,6 +866,7 @@ export type QueryUploadFilesArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type QueryUploadFiles_ConnectionArgs = {
   filters?: InputMaybe<UploadFileFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
@@ -853,10 +874,12 @@ export type QueryUploadFiles_ConnectionArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type QueryUsersPermissionsRoleArgs = {
   documentId: Scalars['ID']['input'];
   status?: InputMaybe<PublicationStatus>;
 };
+
 
 export type QueryUsersPermissionsRolesArgs = {
   filters?: InputMaybe<UsersPermissionsRoleFiltersInput>;
@@ -865,6 +888,7 @@ export type QueryUsersPermissionsRolesArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type QueryUsersPermissionsRoles_ConnectionArgs = {
   filters?: InputMaybe<UsersPermissionsRoleFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
@@ -872,10 +896,12 @@ export type QueryUsersPermissionsRoles_ConnectionArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
 
+
 export type QueryUsersPermissionsUserArgs = {
   documentId: Scalars['ID']['input'];
   status?: InputMaybe<PublicationStatus>;
 };
+
 
 export type QueryUsersPermissionsUsersArgs = {
   filters?: InputMaybe<UsersPermissionsUserFiltersInput>;
@@ -883,6 +909,7 @@ export type QueryUsersPermissionsUsersArgs = {
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
+
 
 export type QueryUsersPermissionsUsers_ConnectionArgs = {
   filters?: InputMaybe<UsersPermissionsUserFiltersInput>;
@@ -903,11 +930,13 @@ export type ReviewWorkflowsWorkflow = {
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
+
 export type ReviewWorkflowsWorkflowStagesArgs = {
   filters?: InputMaybe<ReviewWorkflowsWorkflowStageFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
+
 
 export type ReviewWorkflowsWorkflowStages_ConnectionArgs = {
   filters?: InputMaybe<ReviewWorkflowsWorkflowStageFiltersInput>;
@@ -1165,11 +1194,13 @@ export type UsersPermissionsRole = {
   users_connection?: Maybe<UsersPermissionsUserRelationResponseCollection>;
 };
 
+
 export type UsersPermissionsRolePermissionsArgs = {
   filters?: InputMaybe<UsersPermissionsPermissionFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
+
 
 export type UsersPermissionsRolePermissions_ConnectionArgs = {
   filters?: InputMaybe<UsersPermissionsPermissionFiltersInput>;
@@ -1177,11 +1208,13 @@ export type UsersPermissionsRolePermissions_ConnectionArgs = {
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+
 export type UsersPermissionsRoleUsersArgs = {
   filters?: InputMaybe<UsersPermissionsUserFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
+
 
 export type UsersPermissionsRoleUsers_ConnectionArgs = {
   filters?: InputMaybe<UsersPermissionsUserFiltersInput>;
@@ -1292,17 +1325,7 @@ export type UsersPermissionsUserRelationResponseCollection = {
   nodes: Array<UsersPermissionsUser>;
 };
 
-export type HeroBlock = {
-  __typename: 'ComponentBlocksHero';
-  id: string;
-  title: string;
-  subTitle?: string | null;
-  backgroundImage?: {
-    __typename?: 'UploadFile';
-    alternativeText?: string | null;
-    url: string;
-  } | null;
-};
+export type HeroBlock = { __typename: 'ComponentBlocksHero', id: string, title: string, subTitle?: string | null, backgroundImage?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null };
 
 export type GetPageVariables = Exact<{
   locale: Scalars['I18NLocaleCode']['input'];
@@ -1311,233 +1334,8 @@ export type GetPageVariables = Exact<{
   filters?: InputMaybe<PageFiltersInput>;
 }>;
 
-export type GetPage = {
-  __typename?: 'Query';
-  pages: Array<{
-    __typename?: 'Page';
-    title: string;
-    publishedAt?: any | null;
-    path: string;
-    components?: Array<
-      | {
-          __typename: 'ComponentBlocksHero';
-          id: string;
-          title: string;
-          subTitle?: string | null;
-          backgroundImage?: {
-            __typename?: 'UploadFile';
-            alternativeText?: string | null;
-            url: string;
-          } | null;
-        }
-      | { __typename?: 'Error' }
-      | null
-    > | null;
-  } | null>;
-};
 
-export const HeroBlock = {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'HeroBlock' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'ComponentBlocksHero' }
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'subTitle' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'backgroundImage' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'alternativeText' }
-                },
-                { kind: 'Field', name: { kind: 'Name', value: 'url' } }
-              ]
-            }
-          }
-        ]
-      }
-    }
-  ]
-} as unknown as DocumentNode<HeroBlock, unknown>;
-export const GetPageDocument = {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'OperationDefinition',
-      operation: 'query',
-      name: { kind: 'Name', value: 'getPage' },
-      variableDefinitions: [
-        {
-          kind: 'VariableDefinition',
-          variable: {
-            kind: 'Variable',
-            name: { kind: 'Name', value: 'locale' }
-          },
-          type: {
-            kind: 'NonNullType',
-            type: {
-              kind: 'NamedType',
-              name: { kind: 'Name', value: 'I18NLocaleCode' }
-            }
-          }
-        },
-        {
-          kind: 'VariableDefinition',
-          variable: {
-            kind: 'Variable',
-            name: { kind: 'Name', value: 'offset' }
-          },
-          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } }
-        },
-        {
-          kind: 'VariableDefinition',
-          variable: {
-            kind: 'Variable',
-            name: { kind: 'Name', value: 'limit' }
-          },
-          type: { kind: 'NamedType', name: { kind: 'Name', value: 'Int' } }
-        },
-        {
-          kind: 'VariableDefinition',
-          variable: {
-            kind: 'Variable',
-            name: { kind: 'Name', value: 'filters' }
-          },
-          type: {
-            kind: 'NamedType',
-            name: { kind: 'Name', value: 'PageFiltersInput' }
-          }
-        }
-      ],
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'pages' },
-            arguments: [
-              {
-                kind: 'Argument',
-                name: { kind: 'Name', value: 'filters' },
-                value: {
-                  kind: 'Variable',
-                  name: { kind: 'Name', value: 'filters' }
-                }
-              },
-              {
-                kind: 'Argument',
-                name: { kind: 'Name', value: 'pagination' },
-                value: {
-                  kind: 'ObjectValue',
-                  fields: [
-                    {
-                      kind: 'ObjectField',
-                      name: { kind: 'Name', value: 'start' },
-                      value: {
-                        kind: 'Variable',
-                        name: { kind: 'Name', value: 'offset' }
-                      }
-                    },
-                    {
-                      kind: 'ObjectField',
-                      name: { kind: 'Name', value: 'limit' },
-                      value: {
-                        kind: 'Variable',
-                        name: { kind: 'Name', value: 'limit' }
-                      }
-                    }
-                  ]
-                }
-              },
-              {
-                kind: 'Argument',
-                name: { kind: 'Name', value: 'locale' },
-                value: {
-                  kind: 'Variable',
-                  name: { kind: 'Name', value: 'locale' }
-                }
-              }
-            ],
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-                { kind: 'Field', name: { kind: 'Name', value: 'publishedAt' } },
-                { kind: 'Field', name: { kind: 'Name', value: 'path' } },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'components' },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: {
-                          kind: 'NamedType',
-                          name: { kind: 'Name', value: 'ComponentBlocksHero' }
-                        },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            {
-                              kind: 'FragmentSpread',
-                              name: { kind: 'Name', value: 'HeroBlock' }
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    {
-      kind: 'FragmentDefinition',
-      name: { kind: 'Name', value: 'HeroBlock' },
-      typeCondition: {
-        kind: 'NamedType',
-        name: { kind: 'Name', value: 'ComponentBlocksHero' }
-      },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          { kind: 'Field', name: { kind: 'Name', value: '__typename' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'title' } },
-          { kind: 'Field', name: { kind: 'Name', value: 'subTitle' } },
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'backgroundImage' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'alternativeText' }
-                },
-                { kind: 'Field', name: { kind: 'Name', value: 'url' } }
-              ]
-            }
-          }
-        ]
-      }
-    }
-  ]
-} as unknown as DocumentNode<GetPage, GetPageVariables>;
+export type GetPage = { __typename?: 'Query', pages: Array<{ __typename?: 'Page', title: string, publishedAt?: any | null, path: string, components?: Array<{ __typename: 'ComponentBlocksHero', id: string, title: string, subTitle?: string | null, backgroundImage?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | { __typename?: 'Error' } | null> | null } | null> };
+
+export const HeroBlock = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"HeroBlock"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentBlocksHero"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subTitle"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alternativeText"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]} as unknown as DocumentNode<HeroBlock, unknown>;
+export const GetPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getPage"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"I18NLocaleCode"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"offset"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"limit"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"filters"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"PageFiltersInput"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filters"},"value":{"kind":"Variable","name":{"kind":"Name","value":"filters"}}},{"kind":"Argument","name":{"kind":"Name","value":"pagination"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"start"},"value":{"kind":"Variable","name":{"kind":"Name","value":"offset"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"limit"},"value":{"kind":"Variable","name":{"kind":"Name","value":"limit"}}}]}},{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"publishedAt"}},{"kind":"Field","name":{"kind":"Name","value":"path"}},{"kind":"Field","name":{"kind":"Name","value":"components"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentBlocksHero"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"HeroBlock"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"HeroBlock"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentBlocksHero"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"subTitle"}},{"kind":"Field","name":{"kind":"Name","value":"backgroundImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alternativeText"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]} as unknown as DocumentNode<GetPage, GetPageVariables>;

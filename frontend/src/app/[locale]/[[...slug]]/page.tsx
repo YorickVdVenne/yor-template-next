@@ -24,7 +24,5 @@ export default async function Page({ params }: PageProps) {
       component !== null && component.__typename !== 'Error'
   );
 
-  console.log('components', components);
-
   return <>{components && <ComponentRenderer components={components} />}</>;
 }

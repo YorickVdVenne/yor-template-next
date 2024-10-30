@@ -23,7 +23,8 @@
         }
       },
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "title": {
       "pluginOptions": {
@@ -41,7 +42,9 @@
         }
       },
       "type": "dynamiczone",
-      "components": ["blocks.hero"]
+      "components": [
+        "blocks.hero"
+      ]
     }
   }
 }

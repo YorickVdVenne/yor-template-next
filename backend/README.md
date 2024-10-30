@@ -1,4 +1,4 @@
-# Strapi Backend Docs
+# STRAPI Backend
 
 ## 🚀 Getting started with Strapi
 
@@ -51,4 +51,10 @@ This project follows a structured approach for building and managing UI componen
 1. Atoms: Provide basic building blocks.
 2. Molecules: Use Atoms to create more complex elements
 3. Organisms: use Molecules and Atoms to build larger, content-rich structures.
-4. Page Blocks: leverage all of these to allow for easy and flexible page creation in the content management system. Page Blocks are the only components a content manager should be allowed to use while creating pages.
+4. Blocks: leverage all of these to allow for easy and flexible page creation in the content management system. Blocks are the only components a content manager should be allowed to use while creating pages.
+
+## Internationalization
+
+Configure the locales under Settings -> Internationalization
+
+Then you can create different content using different locales.
