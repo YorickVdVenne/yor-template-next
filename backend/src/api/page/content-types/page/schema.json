@@ -41,9 +41,7 @@
         }
       },
       "type": "dynamiczone",
-      "components": [
-        "blocks.hero"
-      ]
+      "components": ["blocks.hero"]
     }
   }
 }

@@ -16,10 +16,7 @@
     },
     "target": {
       "type": "enumeration",
-      "enum": [
-        "_self",
-        "_blank"
-      ]
+      "enum": ["_self", "_blank"]
     },
     "page": {
       "type": "relation",
