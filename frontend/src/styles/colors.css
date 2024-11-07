@@ -1,21 +1,72 @@
 :root {
-  --color-primary: #1d4ed8; /* Blue */
-  --color-secondary: #9333ea; /* Purple */
-  --color-accent: #f59e0b; /* Yellow */
-  --color-background: #ffffff; /* White */
-  --color-surface: #f3f4f6; /* Light Gray */
-  --color-text: #111827; /* Dark Gray */
-  --color-muted: #6b7280; /* Muted Text */
-  --color-error: #dc2626; /* Red */
-  --color-success: #16a34a; /* Green */
+  /* === Main Colors === */
+  --color-primary: var(--color-primary-500);
+  --color-secondary: var(--color-secondary-500);
+
+  --color-success: var(--color-success-main);
+  --color-error: var(--color-error-main);
+  --color-warning: var(--color-warning-main);
+  --color-info: var(--color-info-main);
+
+  /* === Primary Colors === */
+  --color-primary-50: #e3f2fd;
+  --color-primary-100: #bbdefb;
+  --color-primary-200: #90caf9;
+  --color-primary-300: #64b5f6;
+  --color-primary-400: #42a5f5;
+  --color-primary-500: #2196f3;
+  --color-primary-600: #1e88e5;
+  --color-primary-700: #1976d2;
+  --color-primary-800: #1565c0;
+  --color-primary-900: #0d47a1;
+
+  /* === Secondary Colors === */
+  --color-secondary-50: #fce4ec;
+  --color-secondary-100: #f8bbd0;
+  --color-secondary-200: #f48fb1;
+  --color-secondary-300: #f06292;
+  --color-secondary-400: #ec407a;
+  --color-secondary-500: #e91e63;
+  --color-secondary-600: #d81b60;
+  --color-secondary-700: #c2185b;
+  --color-secondary-800: #ad1457;
+  --color-secondary-900: #880e4f;
+
+  /* === Semantic Colors === */
+  /* State Colors */
+  --color-success-light: #d4edda;
+  --color-success-main: #28a745;
+  --color-success-dark: #155724;
+
+  --color-error-light: #f8d7da;
+  --color-error-main: #dc3545;
+  --color-error-dark: #721c24;
+
+  --color-warning-light: #fff3cd;
+  --color-warning-main: #ffc107;
+  --color-warning-dark: #856404;
+
+  --color-info-light: #d1ecf1;
+  --color-info-main: #17a2b8;
+  --color-info-dark: #0c5460;
+
+  /* Background Colors */
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f5f5f5;
+  --color-background-muted: #eeeeee;
+  --color-background-accent: #e0e0e0;
+  --color-background-dark: #212121;
+
+  /* Text Colors */
+  --color-text-primary: #212121;
+  --color-text-secondary: #757575;
+  --color-text-muted: #9e9e9e;
+  --color-text-inverse: #ffffff;
 }
 
 /* Dark mode colors */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: #1f2937; /* Dark background */
-    --color-surface: #374151; /* Dark surface */
-    --color-text: #e5e7eb; /* Light text */
-    --color-muted: #9ca3af; /* Muted text */
+    --color-background-primary: var(--color-background-dark);
   }
 }

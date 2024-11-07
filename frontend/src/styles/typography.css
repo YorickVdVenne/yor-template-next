@@ -1,83 +1,90 @@
-/* Base styles for the body */
-body {
-  font-family: var(--font-roboto);
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--color-neutral);
-}
+@tailwind base;
 
-/* Headings */
-h1 {
-  font-family: var(--font-roboto);
-  font-size: 2.25rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
+@layer base {
+  /* Base styles for the body */
+  body {
+    font-family: var(--font-roboto);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-neutral-900);
+  }
 
-h2 {
-  font-family: var(--font-roboto);
-  font-size: 1.875rem;
-  font-weight: 600;
-  line-height: 1.3;
-}
+  h1 {
+    font-family: var(--font-roboto);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
 
-h3 {
-  font-family: var(--font-roboto);
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.4;
-}
+  h2 {
+    font-family: var(--font-roboto);
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
 
-h4 {
-  font-family: var(--font-roboto);
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.5;
-}
+  h3 {
+    font-family: var(--font-roboto);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
 
-h5 {
-  font-family: var(--font-roboto);
-  font-size: 1.125rem;
-  font-weight: 500;
-  line-height: 1.5;
-}
+  h4 {
+    font-family: var(--font-roboto);
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
 
-h6 {
-  font-family: var(--font-roboto);
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.5;
-}
+  h5 {
+    font-family: var(--font-roboto);
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
 
-/* Code styles */
-code,
-pre {
-  font-family: var(--font-roboto-mono);
-  background-color: var(--color-light-gray);
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-}
+  h6 {
+    font-family: var(--font-roboto);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
 
-/* Paragraphs */
-p {
-  margin: 0 0 1rem;
-}
+  /* Code styles */
+  code,
+  pre {
+    font-family: var(--font-roboto-mono);
+    background-color: var(--color-neutral-500);
+    border-radius: 4px;
+  }
 
-/* Lists */
-ul,
-ol {
-  margin: 0 0 1rem;
-  padding-left: 1.5rem;
-}
+  /* Paragraphs */
+  p {
+    @apply text-base;
+    @apply md:text-lg;
+  }
 
-/* Links */
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
+  /* Lists */
+  ul,
+  ol {
+    margin: 0 0 1rem;
+    padding-left: 1.5rem;
+  }
 
-a:hover {
-  color: var(--color-secondary);
-  text-decoration: underline;
+  /* Links */
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
+  }
+
+  label {
+    font-family: var(--font-roboto-mono);
+  }
 }
